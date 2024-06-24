@@ -72,11 +72,13 @@ function loadQuestion() {
         quizContainer.innerHTML = `
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">${questionObj.question}</h5>
+                    <h5 class="card-title"><u>${questionObj.question}</u></h5>
                     ${questionObj.answers.map((answer, index) => `
                         <button class="btn button mt-2" onclick="handleAnswer('${answer}')">${answer}</button>
                     `).join('')} <br>
                     ${currentQuestion > 0 ? `<button class="btn button mt-2" onclick="previousQuestion()"><i class="fa-solid fa-arrow-left"></i> Pertanyaan Sebelumnya</button>` : ''}
+                    ${currentQuestion < questions.length - 1 ? `<button class="btn button mt-2" onclick="nextQuestion()">Pertanyaan Selanjutnya <i class="fa-solid fa-arrow-right"></i></button>` : ''} <br>
+                    <button class="btn button mt-2" onclick="resetQuiz()"><i class="fa-solid fa-sync-alt"></i> Hapus dan Mulai Ulang Tes</button>
                 </div>
             </div>
         `;
@@ -89,6 +91,13 @@ function previousQuestion() {
     if (currentQuestion > 0) {
         currentQuestion--;
         score--; // Optional: Adjust the score if necessary
+        loadQuestion();
+    }
+}
+
+function nextQuestion() {
+    if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
         loadQuestion();
     }
 }
@@ -110,6 +119,14 @@ function displayResult() {
     }
     quizContainer.innerHTML = '<button class="btn button" onclick="startQuiz()"><i class="fa-solid fa-user-secret"></i> Mulai Ulang Tes</button>';
     resultContainer.innerHTML = `<p class="result-message"><u>${resultMessage}</u></p>`;
+}
+
+function resetQuiz() {
+    quizStarted = false;
+    currentQuestion = 0;
+    score = 0;
+    quizContainer.innerHTML = '<button class="btn button" onclick="startQuiz()"><i class="fa-solid fa-user-secret"></i> Mulai Tes</button>';
+    resultContainer.innerHTML = '<p>Hasil belum tersedia, lakukan tes terlebih dahulu.</p>';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
