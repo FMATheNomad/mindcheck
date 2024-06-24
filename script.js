@@ -134,3 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
         resultContainer.innerHTML = '<p>Hasil belum tersedia, lakukan tes terlebih dahulu.</p>';
     }
 });
+
+// Mendapatkan tahun saat ini
+const currentYear = new Date().getFullYear();
+  
+// Menampilkan tahun saat ini di dalam elemen span dengan id "copyrightYear"
+document.getElementById('copyrightYear').textContent = currentYear;
