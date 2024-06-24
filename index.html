@@ -45,33 +45,81 @@
         background-color: #880808;
         color: white;
       }
+      .card {
+        background-color: #010100;
+        color: #880808;
+      }
+      .result-message {
+        font-size: 25px;
+      }
     </style>
   </head>
   <body>
     <div class="ctr-border-bottom container text-center">
       <h1 id="home" class="mt-5">Psychopath Test by MindCheck</h1>
       <p class="lead">
-        Temukan apakah kamu memiliki kerpibadian psikopat melalui test ini.
+        Temukan apakah kamu memiliki kerpibadian psikopat melalui tes ini.
       </p>
-      <a href="#quiz" class="button">Mulai test</a>
     </div>
-    <div class="ctr-border-bottom container text-center">
-      <h1 class="mt-5">Daftar Test</h1>
+    <div id="cta-quiz-list" class="ctr-border-bottom container text-center">
+      <h1 class="mt-5">Daftar Tes</h1>
       <div id="quiz-container" class="quiz-list mt-4">
+        <button class="btn button" onclick="startQuiz()">
+          <i class="fa-solid fa-user-secret"></i> Mulai Tes
+        </button>
         <!-- Pertanyaan test akan dimuat disini -->
       </div>
-      <a href="" class="button">Kirim Hasil</a>
     </div>
     <div class="ctr-border-bottom container text-center">
-      <h1 class="mt-5">Hasil Test</h1>
+      <h1 class="mt-5">Hasil Tes</h1>
+      <p class="quiz-result mt-4">Hasil tes akan ditampilkan disini.</p>
       <p id="result" class="quiz-result mt-4">
         <!-- Hasil test akan ditampilkan disini -->
       </p>
-      <a href="#home" class="button">Kembali keatas</a>
+    </div>
+    <div class="ctr-border-bottom container text-center mt-5">
+      <h1 class="mt-5">
+        <u>Apa itu <b>Psychopathos</b>?</u>
+      </h1>
+      <p>
+        Psikopat berasal dari kata Yunani <i>"psyche"</i> yang berarti jiwa atau
+        pikiran, dan <i>"pathos"</i> yang berarti penderitaan atau penyakit.
+        Secara etimologis, istilah ini merujuk pada gangguan jiwa yang ditandai
+        oleh perilaku antisosial yang parah, kurangnya empati, dan seringkali
+        perilaku manipulatif. Individu dengan sifat psikopat mungkin tampak
+        menawan dan percaya diri di permukaan, namun di balik penampilan
+        tersebut, mereka cenderung mengeksploitasi dan memanipulasi orang lain
+        untuk keuntungan pribadi tanpa merasa bersalah atau bertanggung jawab.
+        Psikopati sering dikaitkan dengan gangguan kepribadian antisosial dan
+        bisa menjadi faktor risiko untuk perilaku kriminal. Namun, penting untuk
+        dicatat bahwa tidak semua psikopat terlibat dalam kejahatan; beberapa
+        dapat berfungsi dengan sukses dalam masyarakat. Memahami psikopati
+        adalah penting untuk mengenali tanda-tanda peringatan dan mencari
+        bantuan yang tepat.
+      </p>
+      <h1 class="mt-5">
+        <u>Tentang Tes Ini</u>
+      </h1>
+      <p>
+        Tes ini dirancang untuk membantu Anda memahami lebih lanjut tentang
+        sifat-sifat dan kecenderungan yang mungkin Anda miliki. Dengan menjawab
+        serangkaian pertanyaan sederhana, Anda akan mendapatkan wawasan tentang
+        apakah Anda menunjukkan tanda-tanda psikopat. Harap diingat bahwa tes
+        ini hanya untuk tujuan hiburan dan edukasi. Hasil tes ini tidak
+        dimaksudkan sebagai diagnosis medis atau psikologis. Jika Anda merasa
+        memiliki masalah serius atau memerlukan bantuan profesional, kami
+        menyarankan Anda untuk berkonsultasi dengan seorang ahli di bidang
+        kesehatan mental.
+      </p>
     </div>
     <footer class="mt-5 mb-5 text-center">
       <small>&copy; 2024, FMATheNomad Tech</small>
     </footer>
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c32fe83d09.js"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
